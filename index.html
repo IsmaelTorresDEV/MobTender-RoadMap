@@ -1,0 +1,1924 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<script>
+/* Hoja de ruta pública de Mobtender. */
+const ROADMAP = {
+ "hitos": {
+  "h0": {
+   "corto": "Diseño",
+   "fin": "2026-10-31",
+   "inicio": "2026-10-13",
+   "meta": "Cerrar el diseño: decisiones aprobadas, identidad visual y proyecto de Unreal listo.",
+   "nombre": "Diseño y decisiones",
+   "orden": 0,
+   "puerta": "Ismael aprueba o cambia todas las decisiones del GDD."
+  },
+  "h1": {
+   "corto": "El bar en bloques",
+   "fin": "2026-12-13",
+   "inicio": "2026-11-01",
+   "meta": "El bucle básico para un jugador con geometría provisional: servir, tienda, sospecha, pedidos y el pizzo del domingo, con la semana y el día en pantalla.",
+   "nombre": "El bar en bloques",
+   "orden": 1,
+   "puerta": "Los tres días de prueba se juegan enteros y apetece repetir."
+  },
+  "h2": {
+   "corto": "Entre amigos",
+   "fin": "2027-02-14",
+   "inicio": "2026-12-14",
+   "meta": "Cuatro jugadores en línea con voz de proximidad, físicas y el primer cambiazo. Sale la página de Steam.",
+   "nombre": "Entre amigos",
+   "orden": 2,
+   "puerta": "Cuatro amigos juegan la prueba sin que se rompa y salen tres clips para enseñar."
+  },
+  "h3": {
+   "corto": "Hablar es jugar",
+   "fin": "2027-03-28",
+   "inicio": "2027-02-15",
+   "meta": "La IA dentro de Unreal: clientes, inspecciones, sobornos, el borracho y la escucha por palabras clave.",
+   "nombre": "Hablar es jugar",
+   "orden": 3,
+   "puerta": "En una prueba a ciegas las charlas gustan, la primera frase llega en menos de 2,5 segundos (percentil 95) y no se cuela ningún insulto racial."
+  },
+  "h4": {
+   "corto": "Tiros y redadas",
+   "fin": "2027-04-25",
+   "inicio": "2027-03-29",
+   "meta": "Movimiento, armas de 1933, oleadas de policía, asaltos de bandas y destrucción.",
+   "nombre": "Tiros y redadas",
+   "orden": 4,
+   "puerta": "El tiroteo saca al menos 4 sobre 5 en las pruebas con jugadores."
+  },
+  "h5": {
+   "corto": "La demo",
+   "fin": "2027-05-30",
+   "inicio": "2027-04-26",
+   "meta": "Los tres días de prueba pulidos: un local completo, personajes, contorno, mascota, música, radio y tutorial.",
+   "nombre": "La demo",
+   "orden": 5,
+   "puerta": "Sin cuelgues y con más de 45 minutos de juego de media en la prueba cerrada."
+  },
+  "h6": {
+   "corto": "Next Fest",
+   "fin": "2027-06-21",
+   "inicio": "2027-05-31",
+   "meta": "La demo en el Next Fest del 14 al 21 de junio y el gran empujón de la campaña.",
+   "nombre": "Next Fest de junio",
+   "orden": 6,
+   "puerta": "10.000 deseados o más."
+  },
+  "h7": {
+   "corto": "Acceso anticipado",
+   "fin": "2027-08-19",
+   "inicio": "2027-06-01",
+   "meta": "Contenido para unas 15 horas y lanzamiento en acceso anticipado el jueves 19 de agosto de 2027.",
+   "nombre": "Acceso anticipado",
+   "orden": 7,
+   "puerta": "El juego sale."
+  },
+  "h8": {
+   "corto": "Actualizaciones",
+   "fin": "2028-04-06",
+   "inicio": "2027-08-20",
+   "meta": "Parches, una actualización grande cada 6 a 8 semanas y la versión 1.0.",
+   "nombre": "Después del lanzamiento",
+   "orden": 8,
+   "puerta": "Versión 1.0 publicada."
+  }
+ },
+ "items": {
+  "h0-biblia": {
+   "cat": "epo",
+   "dep": [],
+   "estado": "hecho",
+   "fecha": "2026-10-13",
+   "hito": "h0",
+   "p": 100,
+   "r": "1933 en datos: ley, lugares, ropa, objetos, precios, jerga, sociedad y anacronismos, con fotos enlazadas.",
+   "t": "Biblia de época"
+  },
+  "h0-canciones": {
+   "cat": "son",
+   "dep": [
+    "h0-carpeta"
+   ],
+   "estado": "hecho",
+   "fecha": "2026-10-13",
+   "hito": "h0",
+   "p": 100,
+   "r": "Todas las de City Debts, tal cual.",
+   "t": "Las canciones de la radio: entran las 68"
+  },
+  "h0-carpeta": {
+   "cat": "tec",
+   "dep": [],
+   "estado": "hecho",
+   "fecha": "2026-10-13",
+   "hito": "h0",
+   "p": 100,
+   "r": "Revisar la radio y la IA de City Debts y decidir qué se aprovecha.",
+   "t": "Acceso a la carpeta de City Debts"
+  },
+  "h0-dec": {
+   "cat": "dis",
+   "dep": [
+    "h0-gdd"
+   ],
+   "estado": "hecho",
+   "fecha": "2026-10-13",
+   "hito": "h0",
+   "p": 100,
+   "r": "Las 24, decididas.",
+   "t": "Aprobar las decisiones D01 a D24"
+  },
+  "h0-gdd": {
+   "cat": "dis",
+   "dep": [],
+   "estado": "hecho",
+   "fecha": "2026-10-13",
+   "hito": "h0",
+   "p": 100,
+   "r": "33 secciones: pitch, gancho, bucles, sistemas, época, IA, radio, arte, lo que se trae de City Debts, negocio y calendario.",
+   "t": "GDD 0.2 redactado"
+  },
+  "h0-hoja": {
+   "cat": "dis",
+   "dep": [],
+   "estado": "hecho",
+   "fecha": "2026-10-13",
+   "hito": "h0",
+   "p": 100,
+   "r": "Esta página: hitos, fichas, calendario, campaña y novedades.",
+   "t": "Hoja de ruta con fechas"
+  },
+  "h0-identidad": {
+   "cat": "arte",
+   "dep": [
+    "h0-dec"
+   ],
+   "estado": "hecho",
+   "fecha": "2026-10-14",
+   "hito": "h0",
+   "p": 100,
+   "r": "Un lienzo de diseño como el de City Debts: paleta, letras, personajes, Felice y el logo de Mobtender.",
+   "t": "Identidad visual"
+  },
+  "h0-mascota": {
+   "cat": "arte",
+   "dep": [],
+   "estado": "hecho",
+   "fecha": "2026-10-14",
+   "hito": "h0",
+   "p": 100,
+   "r": "Una rata estrella de los dibujos de 1933, con guiño a Felix the Cat.",
+   "t": "La mascota: Felice"
+  },
+  "h0-mercado": {
+   "cat": "neg",
+   "dep": [],
+   "estado": "hecho",
+   "fecha": "2026-10-13",
+   "hito": "h0",
+   "p": 100,
+   "r": "Friend slop que funcionan y que no, precios, ventas y el hueco que deja el género.",
+   "t": "Estudio de mercado"
+  },
+  "h0-pdf": {
+   "cat": "dis",
+   "dep": [
+    "h0-gdd"
+   ],
+   "estado": "hecho",
+   "fecha": "2026-10-13",
+   "hito": "h0",
+   "p": 100,
+   "r": "68 páginas maquetadas al estilo de 1933: portada, contenido, un capítulo por página y la biblia de época como anexo.",
+   "t": "El GDD en PDF"
+  },
+  "h0-proyecto": {
+   "cat": "tec",
+   "dep": [],
+   "estado": "hecho",
+   "fecha": "2026-10-14",
+   "hito": "h0",
+   "p": 100,
+   "r": "Mobtender en Unreal 5.8.1 y Blueprints, con Git y con Claude conectado al editor.",
+   "t": "Proyecto de Unreal nuevo"
+  },
+  "h0-relevo": {
+   "cat": "tec",
+   "dep": [
+    "h0-proyecto"
+   ],
+   "estado": "en_curso",
+   "fecha": "2026-10-31",
+   "hito": "h0",
+   "p": 80,
+   "r": "Desde aquí, el juego se hace con Claude Code en el PC de Ismael, dentro del proyecto Mobtender.",
+   "t": "Paso a Claude Code"
+  },
+  "h0-titulo": {
+   "cat": "dis",
+   "dep": [],
+   "estado": "hecho",
+   "fecha": "2026-10-13",
+   "hito": "h0",
+   "p": 100,
+   "r": "Mob, la mafia, y bartender, el camarero.",
+   "t": "El título: Mobtender"
+  },
+  "h1-banco": {
+   "cat": "ia",
+   "dep": [
+    "h1-traer"
+   ],
+   "estado": "planificado",
+   "hito": "h1",
+   "p": 0,
+   "r": "La escena del agente que entra a mirar, fuera de Unreal, en Python.",
+   "t": "Banco de pruebas: el policía en la puerta"
+  },
+  "h1-bloques": {
+   "cat": "arte",
+   "dep": [
+    "h0-proyecto"
+   ],
+   "estado": "planificado",
+   "hito": "h1",
+   "p": 0,
+   "r": "Geometría provisional de la barbería y del bar de su sótano.",
+   "t": "Tienda, sótano, callejón y calle en bloques"
+  },
+  "h1-clientes": {
+   "cat": "sis",
+   "dep": [
+    "h1-servir"
+   ],
+   "estado": "planificado",
+   "hito": "h1",
+   "p": 0,
+   "r": "Ocho tipos de cliente de mala vida, todavía sin IA.",
+   "t": "Clientes con horario y paciencia"
+  },
+  "h1-cuota": {
+   "cat": "sis",
+   "dep": [
+    "h1-reloj"
+   ],
+   "estado": "planificado",
+   "hito": "h1",
+   "p": 0,
+   "r": "Nunzio «il Prete» y Rocco «Mezzanotte», el pizzo, la paliza de medianoche y el pizzo doble.",
+   "t": "El pizzo del domingo y los cobradores"
+  },
+  "h1-dinero": {
+   "cat": "sis",
+   "dep": [
+    "h1-tienda"
+   ],
+   "estado": "planificado",
+   "hito": "h1",
+   "p": 0,
+   "r": "Dos cajas, tope diario creíble y en qué se gasta cada uno.",
+   "t": "Dinero sucio, limpio y blanqueo"
+  },
+  "h1-hojaruta": {
+   "cat": "tec",
+   "dep": [
+    "h0-proyecto"
+   ],
+   "estado": "hecho",
+   "fecha": "2026-10-14",
+   "hito": "h0",
+   "p": 100,
+   "r": "Esta hoja de ruta, dentro del proyecto y también en la web.",
+   "t": "La hoja de ruta, dentro del proyecto"
+  },
+  "h1-mapa": {
+   "cat": "sis",
+   "dep": [
+    "h1-bloques"
+   ],
+   "estado": "planificado",
+   "hito": "h1",
+   "p": 0,
+   "r": "El mapa de la pared, orígenes al azar, desglose del porcentaje y llegada al callejón.",
+   "t": "Mapa de pedidos con porcentaje de éxito"
+  },
+  "h1-modelo": {
+   "cat": "ia",
+   "dep": [
+    "h1-banco"
+   ],
+   "estado": "planificado",
+   "hito": "h1",
+   "p": 0,
+   "r": "Gemma 4 12B para el perfil Completo, Qwen3.5-4B para el Ligero y Qwen3-ASR para oír.",
+   "t": "Modelos y voz: los de City Debts"
+  },
+  "h1-nombre": {
+   "cat": "sis",
+   "dep": [
+    "h1-tienda"
+   ],
+   "estado": "planificado",
+   "hito": "h1",
+   "p": 0,
+   "r": "Los jugadores lo eligen al empezar y sale en todos los letreros.",
+   "t": "El nombre del negocio"
+  },
+  "h1-reloj": {
+   "cat": "sis",
+   "dep": [
+    "h0-proyecto"
+   ],
+   "estado": "planificado",
+   "hito": "h1",
+   "p": 0,
+   "r": "Días, horas, semanas y sucesos reales en su fecha.",
+   "t": "Reloj y calendario de 1933"
+  },
+  "h1-servir": {
+   "cat": "sis",
+   "dep": [
+    "h1-bloques"
+   ],
+   "estado": "planificado",
+   "hito": "h1",
+   "p": 0,
+   "r": "Coger botella, servir o mezclar, cobrar, fregar y reponer.",
+   "t": "Servir copas y cobrar"
+  },
+  "h1-sospecha": {
+   "cat": "sis",
+   "dep": [
+    "h1-tienda"
+   ],
+   "estado": "planificado",
+   "hito": "h1",
+   "p": 0,
+   "r": "Qué la sube, qué la baja y la primera visita de un agente.",
+   "t": "Barra de sospecha e inspección sencilla"
+  },
+  "h1-tienda": {
+   "cat": "sis",
+   "dep": [
+    "h1-bloques"
+   ],
+   "estado": "planificado",
+   "hito": "h1",
+   "p": 0,
+   "r": "Cortar el pelo, barrer, cobrar y abrir y cerrar a mano.",
+   "t": "Negocio legal: tareas, abrir y cerrar"
+  },
+  "h1-traer": {
+   "cat": "tec",
+   "dep": [
+    "h0-proyecto",
+    "h0-carpeta"
+   ],
+   "estado": "planificado",
+   "hito": "h1",
+   "p": 0,
+   "r": "Banco de pruebas, herramientas de la radio, voces, marcas y los Blueprints del reloj, las rutinas y el guardado.",
+   "t": "Traer lo de City Debts"
+  },
+  "h2-cambiazo": {
+   "cat": "sis",
+   "dep": [
+    "h2-fisicas"
+   ],
+   "estado": "planificado",
+   "hito": "h2",
+   "p": 0,
+   "r": "45 segundos para que el bar parezca un almacén.",
+   "t": "El cambiazo, primera versión"
+  },
+  "h2-capsula": {
+   "cat": "mkt",
+   "dep": [
+    "h0-identidad",
+    "h0-titulo"
+   ],
+   "estado": "planificado",
+   "fecha": "2026-11-30",
+   "hito": "h1",
+   "p": 0,
+   "r": "La imagen de la tienda y un tráiler corto.",
+   "t": "Cápsula y tráiler de anuncio"
+  },
+  "h2-discord": {
+   "cat": "mkt",
+   "dep": [
+    "h2-steam"
+   ],
+   "estado": "planificado",
+   "fecha": "2027-01-21",
+   "hito": "h2",
+   "p": 0,
+   "r": "La comunidad desde el primer día de la página.",
+   "t": "Discord abierto"
+  },
+  "h2-fisicas": {
+   "cat": "sis",
+   "dep": [
+    "h2-replica"
+   ],
+   "estado": "planificado",
+   "hito": "h2",
+   "p": 0,
+   "r": "Cajas, botellas, sillas y borrachos con físicas.",
+   "t": "Cargar, lanzar y romper"
+  },
+  "h2-guardado": {
+   "cat": "tec",
+   "dep": [
+    "h2-replica"
+   ],
+   "estado": "planificado",
+   "hito": "h2",
+   "p": 0,
+   "r": "Guardar cada día a las 6:00 y entrar en una partida empezada.",
+   "t": "Guardado al amanecer y unirse a mitad"
+  },
+  "h2-replica": {
+   "cat": "red",
+   "dep": [
+    "h2-salas"
+   ],
+   "estado": "planificado",
+   "hito": "h2",
+   "p": 0,
+   "r": "Servir, tienda, pedidos, sospecha y cuota, sincronizados.",
+   "t": "El bucle del bar en red"
+  },
+  "h2-salas": {
+   "cat": "red",
+   "dep": [
+    "h0-proyecto"
+   ],
+   "estado": "planificado",
+   "hito": "h2",
+   "p": 0,
+   "r": "Crear partida, invitar amigos y unirse.",
+   "t": "Salas e invitaciones de Steam"
+  },
+  "h2-steam": {
+   "cat": "neg",
+   "dep": [
+    "h2-capsula"
+   ],
+   "estado": "planificado",
+   "fecha": "2027-01-21",
+   "hito": "h2",
+   "p": 0,
+   "r": "Para empezar a sumar deseados.",
+   "t": "Página de Steam publicada"
+  },
+  "h2-voz": {
+   "cat": "red",
+   "dep": [
+    "h2-salas"
+   ],
+   "estado": "planificado",
+   "hito": "h2",
+   "p": 0,
+   "r": "Se oye por cercanía y amortiguado a través de las paredes.",
+   "t": "Voz de proximidad con paredes"
+  },
+  "h3-borracho": {
+   "cat": "ia",
+   "dep": [
+    "h3-clientes"
+   ],
+   "estado": "planificado",
+   "hito": "h3",
+   "p": 0,
+   "r": "Eddie, que no se quiere ir, y el que no deja de hablar.",
+   "t": "El borracho y el pesado"
+  },
+  "h3-ciegas": {
+   "cat": "ia",
+   "dep": [
+    "h3-clientes",
+    "h3-inspeccion",
+    "h3-validador"
+   ],
+   "estado": "planificado",
+   "hito": "h3",
+   "p": 0,
+   "r": "Cinco personas puntúan sin saber qué está escrito y qué generado.",
+   "t": "Prueba a ciegas de las charlas"
+  },
+  "h3-clientes": {
+   "cat": "ia",
+   "dep": [
+    "h3-servicio"
+   ],
+   "estado": "planificado",
+   "hito": "h3",
+   "p": 0,
+   "r": "Pedir, charlar, quejarse y dar propina con la voz.",
+   "t": "Clientes con IA y voz"
+  },
+  "h3-emisarios": {
+   "cat": "per",
+   "dep": [
+    "h3-servicio"
+   ],
+   "estado": "planificado",
+   "hito": "h3",
+   "p": 0,
+   "r": "Cada banda manda a alguien a hablar, con su forma de ser.",
+   "t": "Emisarios de las bandas"
+  },
+  "h3-escucha": {
+   "cat": "ia",
+   "dep": [
+    "h3-servicio",
+    "h2-voz"
+   ],
+   "estado": "planificado",
+   "hito": "h3",
+   "p": 0,
+   "r": "Palabras clave de la voz de proximidad cerca de los NPC que escuchan.",
+   "t": "Te están escuchando"
+  },
+  "h3-inspeccion": {
+   "cat": "ia",
+   "dep": [
+    "h3-servicio"
+   ],
+   "estado": "planificado",
+   "hito": "h3",
+   "p": 0,
+   "r": "Convencer, entretener o pagar al agente con tu voz.",
+   "t": "Inspecciones y sobornos hablando"
+  },
+  "h3-perfiles": {
+   "cat": "tec",
+   "dep": [
+    "h3-servicio"
+   ],
+   "estado": "planificado",
+   "hito": "h3",
+   "p": 0,
+   "r": "Que el juego funcione en cualquier PC de anfitrión.",
+   "t": "Perfiles Completo, Ligero y Sin IA"
+  },
+  "h3-servicio": {
+   "cat": "ia",
+   "dep": [
+    "h1-modelo",
+    "h2-replica"
+   ],
+   "estado": "planificado",
+   "hito": "h3",
+   "p": 0,
+   "r": "El núcleo del banco de pruebas, como proceso aparte en el PC del anfitrión.",
+   "t": "Servicio de IA junto a Unreal"
+  },
+  "h3-validador": {
+   "cat": "ia",
+   "dep": [
+    "h3-servicio"
+   ],
+   "estado": "planificado",
+   "hito": "h3",
+   "p": 0,
+   "r": "Anacronismos, insultos raciales y referencias modernas, fuera.",
+   "t": "Validador de 1933"
+  },
+  "h4-armas": {
+   "cat": "acc",
+   "dep": [
+    "h4-mov"
+   ],
+   "estado": "planificado",
+   "hito": "h4",
+   "p": 0,
+   "r": "Revólver .38, pistola .45, escopeta de corredera, recortada, Thompson y porra.",
+   "t": "Seis armas de 1933"
+  },
+  "h4-bandas": {
+   "cat": "acc",
+   "dep": [
+    "h4-armas"
+   ],
+   "estado": "planificado",
+   "hito": "h4",
+   "p": 0,
+   "r": "Cada banda ataca a su manera.",
+   "t": "Asaltos de bandas al bar"
+  },
+  "h4-caer": {
+   "cat": "acc",
+   "dep": [
+    "h4-mov"
+   ],
+   "estado": "planificado",
+   "hito": "h4",
+   "p": 0,
+   "r": "Los amigos te levantan o te sacan a rastras.",
+   "t": "Caer, reanimar y arrastrar"
+  },
+  "h4-destruccion": {
+   "cat": "acc",
+   "dep": [
+    "h2-fisicas"
+   ],
+   "estado": "planificado",
+   "hito": "h4",
+   "p": 0,
+   "r": "Botellas, barriles, cristales, mesas y alcohol que arde.",
+   "t": "Destrucción del bar"
+  },
+  "h4-mov": {
+   "cat": "acc",
+   "dep": [
+    "h2-replica"
+   ],
+   "estado": "planificado",
+   "hito": "h4",
+   "p": 0,
+   "r": "Correr, agacharse, deslizarse, trepar, asomarse y dar patadas.",
+   "t": "Movimiento"
+  },
+  "h4-policia": {
+   "cat": "acc",
+   "dep": [
+    "h4-armas"
+   ],
+   "estado": "planificado",
+   "hito": "h4",
+   "p": 0,
+   "r": "Patrulleros, brigada con escopetas y federales con subfusiles y gas.",
+   "t": "Oleadas de policía"
+  },
+  "h4-prueba": {
+   "cat": "acc",
+   "dep": [
+    "h4-policia",
+    "h4-bandas",
+    "h4-caer"
+   ],
+   "estado": "planificado",
+   "hito": "h4",
+   "p": 0,
+   "r": "La condición de paso del hito.",
+   "t": "Prueba de tiroteo con jugadores"
+  },
+  "h5-envio": {
+   "cat": "neg",
+   "dep": [
+    "h5-playtest"
+   ],
+   "estado": "planificado",
+   "fecha": "2027-05-17",
+   "hito": "h5",
+   "p": 0,
+   "r": "Último día para que esté lista en el avance para prensa.",
+   "t": "Demo enviada a revisión"
+  },
+  "h5-imagen": {
+   "cat": "arte",
+   "dep": [
+    "h0-identidad"
+   ],
+   "estado": "planificado",
+   "hito": "h5",
+   "p": 0,
+   "r": "Contorno selectivo, grano, colores del primer Technicolor y modo en blanco y negro.",
+   "t": "Contorno negro y la imagen de 1933"
+  },
+  "h5-local": {
+   "cat": "arte",
+   "dep": [
+    "h0-identidad",
+    "h1-bloques"
+   ],
+   "estado": "planificado",
+   "hito": "h5",
+   "p": 0,
+   "r": "Primer local con arte de verdad: tienda, bar, almacén, callejón y calle.",
+   "t": "La barbería completa"
+  },
+  "h5-mascota": {
+   "cat": "arte",
+   "dep": [
+    "h0-mascota"
+   ],
+   "estado": "planificado",
+   "hito": "h5",
+   "p": 0,
+   "r": "Consejos, caras de estado y reacciones, en 2D como una tira de dibujos.",
+   "t": "Felice, animado"
+  },
+  "h5-musica": {
+   "cat": "son",
+   "dep": [],
+   "estado": "planificado",
+   "hito": "h5",
+   "p": 0,
+   "r": "Jazz de dibujos de 1933 con golpes para cada momento.",
+   "t": "Banda sonora de la demo"
+  },
+  "h5-personajes": {
+   "cat": "arte",
+   "dep": [
+    "h0-identidad"
+   ],
+   "estado": "planificado",
+   "hito": "h5",
+   "p": 0,
+   "r": "Cuerpo base, caras expresivas y ropa de 1933.",
+   "t": "Personajes estilizados"
+  },
+  "h5-playtest": {
+   "cat": "neg",
+   "dep": [
+    "h2-discord"
+   ],
+   "estado": "planificado",
+   "fecha": "2027-04-12",
+   "fin": "2027-05-09",
+   "hito": "h5",
+   "p": 0,
+   "r": "Jugadores del Discord prueban la demo.",
+   "t": "Prueba cerrada con Steam Playtest"
+  },
+  "h5-radio": {
+   "cat": "son",
+   "dep": [
+    "h0-canciones",
+    "h1-traer"
+   ],
+   "estado": "planificado",
+   "hito": "h5",
+   "p": 0,
+   "r": "Emisoras, cuñas, noticias y música adaptadas desde City Debts.",
+   "t": "La radio de 1933"
+  },
+  "h5-tutorial": {
+   "cat": "sis",
+   "dep": [
+    "h5-mascota"
+   ],
+   "estado": "planificado",
+   "hito": "h5",
+   "p": 0,
+   "r": "Se aprende jugando la prueba de Sal, con los consejos de la mascota.",
+   "t": "Tutorial dentro de los tres días"
+  },
+  "h5-ui": {
+   "cat": "arte",
+   "dep": [
+    "h0-identidad"
+   ],
+   "estado": "planificado",
+   "hito": "h5",
+   "p": 0,
+   "r": "Menús, mapa, carteles de título y onomatopeyas.",
+   "t": "Interfaz art déco y transiciones de iris"
+  },
+  "h6-inscripcion": {
+   "cat": "neg",
+   "dep": [
+    "h2-steam"
+   ],
+   "estado": "planificado",
+   "fecha": "2027-04-25",
+   "hito": "h6",
+   "p": 0,
+   "r": "Fecha límite de Steam.",
+   "t": "Inscripción en el Next Fest de junio"
+  },
+  "h6-prensa": {
+   "cat": "mkt",
+   "dep": [],
+   "estado": "planificado",
+   "fecha": "2027-06-03",
+   "hito": "h6",
+   "p": 0,
+   "r": "La historia del estudiante de Sevilla que hace un juego de mafiosos de 1933 con IA.",
+   "t": "Prensa española"
+  },
+  "h6-streamers": {
+   "cat": "mkt",
+   "dep": [
+    "h5-envio"
+   ],
+   "estado": "planificado",
+   "fecha": "2027-06-03",
+   "fin": "2027-06-21",
+   "hito": "h6",
+   "p": 0,
+   "r": "Pequeños y medianos que juegan friend slop.",
+   "t": "Claves para 100 streamers"
+  },
+  "h6-trailer": {
+   "cat": "mkt",
+   "dep": [
+    "h5-local"
+   ],
+   "estado": "planificado",
+   "fecha": "2027-05-28",
+   "hito": "h6",
+   "p": 0,
+   "r": "El que se ve en el festival.",
+   "t": "Tráiler de la demo"
+  },
+  "h7-alcohol": {
+   "cat": "sis",
+   "dep": [
+    "h1-mapa"
+   ],
+   "estado": "planificado",
+   "hito": "h7",
+   "p": 0,
+   "r": "Del matarratas al champán, con sus orígenes en el mapa.",
+   "t": "Once tipos de alcohol"
+  },
+  "h7-bandas": {
+   "cat": "per",
+   "dep": [
+    "h3-emisarios",
+    "h4-bandas"
+   ],
+   "estado": "planificado",
+   "hito": "h7",
+   "p": 0,
+   "r": "Lincoln Heights, la Combinación, la Flota del Almirante, los de Tijuana y el Sindicato de Central Avenue.",
+   "t": "Cinco bandas"
+  },
+  "h7-calendario": {
+   "cat": "epo",
+   "dep": [
+    "h1-reloj",
+    "h5-radio"
+   ],
+   "estado": "planificado",
+   "hito": "h7",
+   "p": 0,
+   "r": "Cierre de bancos, terremoto, cerveza legal y nuevo alcalde, sin fecha en pantalla.",
+   "t": "Sucesos de 1933 por semanas"
+  },
+  "h7-clasificacion": {
+   "cat": "neg",
+   "dep": [],
+   "estado": "planificado",
+   "hito": "h7",
+   "p": 0,
+   "r": "Violencia, sangre, alcohol, tabaco y palabrotas; incluye la clasificación para Alemania.",
+   "t": "Cuestionario de contenido de Steam"
+  },
+  "h7-ia-steam": {
+   "cat": "neg",
+   "dep": [
+    "h3-validador"
+   ],
+   "estado": "planificado",
+   "hito": "h7",
+   "p": 0,
+   "r": "Lo hecho con IA y lo que genera la IA durante la partida.",
+   "t": "Declaración de IA y filtros en Steam"
+  },
+  "h7-idiomas": {
+   "cat": "tec",
+   "dep": [],
+   "estado": "planificado",
+   "hito": "h7",
+   "p": 0,
+   "r": "Interfaz, textos escritos y la IA en el idioma del jugador.",
+   "t": "Inglés, español y chino simplificado"
+  },
+  "h7-jefe": {
+   "cat": "per",
+   "dep": [
+    "h5-personajes"
+   ],
+   "estado": "planificado",
+   "hito": "h7",
+   "p": 0,
+   "r": "Llamadas de los lunes, notas en la caja y escenas clave.",
+   "t": "Escenas de Sal Gemelli"
+  },
+  "h7-lanzamiento": {
+   "cat": "neg",
+   "dep": [
+    "h7-tapaderas",
+    "h7-bandas",
+    "h7-mudanzas"
+   ],
+   "estado": "planificado",
+   "fecha": "2027-08-19",
+   "hito": "h7",
+   "p": 0,
+   "r": "La salida del juego en Steam.",
+   "t": "Lanzamiento en acceso anticipado"
+  },
+  "h7-mudanzas": {
+   "cat": "sis",
+   "dep": [
+    "h7-tapaderas"
+   ],
+   "estado": "planificado",
+   "hito": "h7",
+   "p": 0,
+   "r": "Locales en el mapa, camión de mudanza y montar el negocio.",
+   "t": "Mudanzas y locales"
+  },
+  "h7-ropa": {
+   "cat": "sis",
+   "dep": [
+    "h5-personajes"
+   ],
+   "estado": "planificado",
+   "hito": "h7",
+   "p": 0,
+   "r": "Prendas con carisma, estilos de decoración y mejoras.",
+   "t": "Ropa, carisma y decoración"
+  },
+  "h7-soplos": {
+   "cat": "sis",
+   "dep": [
+    "h7-bandas"
+   ],
+   "estado": "planificado",
+   "hito": "h7",
+   "p": 0,
+   "r": "Soplos en el mapa, chivar a la policía y asaltar un almacén rival.",
+   "t": "Soplos, chivatazos y un atraco"
+  },
+  "h7-tapaderas": {
+   "cat": "sis",
+   "dep": [
+    "h5-local"
+   ],
+   "estado": "planificado",
+   "hito": "h7",
+   "p": 0,
+   "r": "Barbería, ultramarinos y taller con gasolinera.",
+   "t": "Tres tapaderas"
+  },
+  "h8-atracos": {
+   "cat": "acc",
+   "dep": [
+    "h7-soplos"
+   ],
+   "estado": "planificado",
+   "hito": "h8",
+   "p": 0,
+   "r": "Barco en San Pedro, alambique en un cañón y garaje.",
+   "t": "Más atracos"
+  },
+  "h8-bandas": {
+   "cat": "per",
+   "dep": [
+    "h7-bandas"
+   ],
+   "estado": "planificado",
+   "hito": "h8",
+   "p": 0,
+   "r": "El Tong, los pescadores de San Pedro, los cerveceros y los rusos blancos.",
+   "t": "Cuatro bandas más"
+  },
+  "h8-parches": {
+   "cat": "tec",
+   "dep": [
+    "h7-lanzamiento"
+   ],
+   "estado": "planificado",
+   "hito": "h8",
+   "p": 0,
+   "r": "Arreglos cada semana tras el lanzamiento.",
+   "t": "Parches frecuentes"
+  },
+  "h8-repeal": {
+   "cat": "sis",
+   "dep": [
+    "h7-lanzamiento"
+   ],
+   "estado": "planificado",
+   "fecha": "2027-12-02",
+   "hito": "h8",
+   "p": 0,
+   "r": "Para el aniversario de la derogación, el 5 de diciembre.",
+   "t": "«Last Call», la actualización del fin de la Ley Seca"
+  },
+  "h8-taller": {
+   "cat": "tec",
+   "dep": [],
+   "estado": "planificado",
+   "hito": "h8",
+   "p": 0,
+   "r": "Ropa y decoración hechas por la comunidad.",
+   "t": "Taller de Steam"
+  },
+  "h8-tapaderas": {
+   "cat": "sis",
+   "dep": [
+    "h7-tapaderas"
+   ],
+   "estado": "planificado",
+   "hito": "h8",
+   "p": 0,
+   "r": "Nuevas tapaderas.",
+   "t": "Farmacia, funeraria y sastrería"
+  },
+  "h8-v10": {
+   "cat": "neg",
+   "dep": [
+    "h8-repeal"
+   ],
+   "estado": "planificado",
+   "fecha": "2028-04-06",
+   "hito": "h8",
+   "p": 0,
+   "r": "Fin del acceso anticipado.",
+   "t": "Versión 1.0"
+  },
+  "mkt-videos": {
+   "cat": "mkt",
+   "dep": [],
+   "estado": "planificado",
+   "fecha": "2026-11-05",
+   "fin": "2027-08-19",
+   "hito": "h1",
+   "p": 0,
+   "r": "TikTok, YouTube Shorts e Instagram desde noviembre: IA, cambiazo y frases del Jefe.",
+   "t": "Vídeos cortos cada semana"
+  }
+ },
+ "fechas": {
+  "f-envio": {
+   "clave": false,
+   "cuenta": false,
+   "fecha": "2027-05-17",
+   "tipo": "nuestro",
+   "titulo": "Demo a revisión"
+  },
+  "f-gdd": {
+   "clave": false,
+   "cuenta": false,
+   "fecha": "2026-10-13",
+   "tipo": "nuestro",
+   "titulo": "GDD 0.1 y 0.2"
+  },
+  "f-inscripcion": {
+   "clave": false,
+   "cuenta": false,
+   "fecha": "2027-04-25",
+   "tipo": "steam",
+   "titulo": "Fin de inscripción del Next Fest"
+  },
+  "f-lanzamiento": {
+   "clave": true,
+   "cuenta": true,
+   "fecha": "2027-08-19",
+   "tipo": "nuestro",
+   "titulo": "Acceso anticipado"
+  },
+  "f-nextfest": {
+   "clave": false,
+   "cuenta": true,
+   "fecha": "2027-06-14",
+   "fin": "2027-06-21",
+   "tipo": "steam",
+   "titulo": "Next Fest de junio"
+  },
+  "f-nf-feb": {
+   "clave": false,
+   "cuenta": false,
+   "fecha": "2027-02-22",
+   "fin": "2027-03-01",
+   "tipo": "steam",
+   "titulo": "Next Fest de febrero"
+  },
+  "f-pagina": {
+   "clave": false,
+   "cuenta": true,
+   "fecha": "2027-01-21",
+   "tipo": "nuestro",
+   "titulo": "Página de Steam"
+  },
+  "f-prensa": {
+   "clave": false,
+   "cuenta": false,
+   "fecha": "2027-06-03",
+   "tipo": "steam",
+   "titulo": "Avance para prensa del Next Fest"
+  },
+  "f-primavera": {
+   "clave": false,
+   "cuenta": false,
+   "fecha": "2027-03-18",
+   "fin": "2027-03-25",
+   "tipo": "steam",
+   "titulo": "Rebajas de primavera"
+  },
+  "f-repeal": {
+   "clave": false,
+   "cuenta": false,
+   "fecha": "2027-12-02",
+   "tipo": "nuestro",
+   "titulo": "«Last Call», la actualización del fin de la Ley Seca"
+  },
+  "f-shopkeeper": {
+   "clave": false,
+   "cuenta": false,
+   "fecha": "2027-01-25",
+   "fin": "2027-02-01",
+   "tipo": "steam",
+   "titulo": "Shop Keeper Fest"
+  },
+  "f-v10": {
+   "clave": false,
+   "cuenta": true,
+   "fecha": "2028-04-06",
+   "tipo": "nuestro",
+   "titulo": "Versión 1.0"
+  },
+  "f-verano": {
+   "clave": false,
+   "cuenta": false,
+   "fecha": "2027-06-24",
+   "fin": "2027-07-08",
+   "tipo": "steam",
+   "titulo": "Rebajas de verano"
+  }
+ },
+ "novedades": {
+  "n-2026-10-14d": {
+   "fecha": "2026-10-14",
+   "titulo": "Ismael revisa la identidad y cambia el bar de sitio",
+   "puntos": []
+  },
+  "n-2026-10-14c": {
+   "fecha": "2026-10-14",
+   "titulo": "La identidad visual, propuesta",
+   "puntos": []
+  },
+  "n-2026-10-14b": {
+   "fecha": "2026-10-14",
+   "titulo": "Mobtender y Felice, en los registros de marcas",
+   "puntos": []
+  },
+  "n-2026-10-14": {
+   "fecha": "2026-10-14",
+   "titulo": "El proyecto de Unreal, montado",
+   "puntos": []
+  },
+  "n-2026-10-13f": {
+   "fecha": "2026-10-13",
+   "titulo": "El juego pasa a Claude Code",
+   "puntos": []
+  },
+  "n-2026-10-13e": {
+   "fecha": "2026-10-13",
+   "titulo": "Todas las decisiones, tomadas",
+   "puntos": []
+  },
+  "n-2026-10-13d": {
+   "fecha": "2026-10-13",
+   "titulo": "Cuándo se pasa a Claude Code",
+   "puntos": []
+  },
+  "n-2026-10-13c": {
+   "fecha": "2026-10-13",
+   "titulo": "Se llama Mobtender",
+   "puntos": []
+  },
+  "n-2026-10-13b": {
+   "fecha": "2026-10-13",
+   "titulo": "City Debts, revisado",
+   "puntos": []
+  },
+  "n-2026-10-13": {
+   "fecha": "2026-10-13",
+   "titulo": "Nace Quota Nostra",
+   "puntos": []
+  }
+ },
+ "meta": {
+  "actualizado": "2026-10-14",
+  "juego": "Mobtender"
+ }
+};
+window.ROADMAP = ROADMAP;
+</script>
+<title>Hoja de ruta de Mobtender</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: cartel de título de dibujos de 1933 arriba; debajo, vistas a pantalla completa que se abren con un iris. */
+:root{
+  --paper:#edf0e9; --paper-2:#e1e6dc; --card:#f8faf5; --ink:#17140f; --muted:#555a52; --faint:#868b81; --line:#c6ccbf;
+  --red:#b9322a; --red-tint:rgba(185,50,42,.10); --teal:#1d6b64; --teal-tint:rgba(29,107,100,.12);
+  --gold:#9a6a08; --gold-tint:rgba(185,124,12,.14); --sky:#2b5f8f; --sky-tint:rgba(43,95,143,.12);
+  --ray:rgba(23,20,15,.045); --shadow:0 1px 0 rgba(23,20,15,.08),0 10px 24px -18px rgba(23,20,15,.45);
+  --display:"Fascinate","Broadway","Impact",fantasy;
+  --body:"Jost","Futura","Century Gothic","Avenir Next",system-ui,sans-serif;
+  --mono:"DM Mono","Courier New",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#101310; --paper-2:#171a17; --card:#1d211d; --ink:#ebe8de; --muted:#a6aba0; --faint:#71766d; --line:#31372f;
+    --red:#ee6150; --red-tint:rgba(238,97,80,.14); --teal:#55b6a9; --teal-tint:rgba(85,182,169,.14);
+    --gold:#e3b04f; --gold-tint:rgba(227,176,79,.14); --sky:#79aee0; --sky-tint:rgba(121,174,224,.14);
+    --ray:rgba(235,232,222,.035); --shadow:0 1px 0 rgba(0,0,0,.4),0 12px 26px -18px rgba(0,0,0,.9);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101310; --paper-2:#171a17; --card:#1d211d; --ink:#ebe8de; --muted:#a6aba0; --faint:#71766d; --line:#31372f;
+  --red:#ee6150; --red-tint:rgba(238,97,80,.14); --teal:#55b6a9; --teal-tint:rgba(85,182,169,.14);
+  --gold:#e3b04f; --gold-tint:rgba(227,176,79,.14); --sky:#79aee0; --sky-tint:rgba(121,174,224,.14);
+  --ray:rgba(235,232,222,.035); --shadow:0 1px 0 rgba(0,0,0,.4),0 12px 26px -18px rgba(0,0,0,.9);
+  color-scheme:dark;
+}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box}
+button{font:inherit;color:inherit}
+a{color:var(--red)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
+
+/* Cartel */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(6px);border-bottom:2px solid var(--ink)}
+.top-in{display:flex;align-items:center;gap:8px 28px;flex-wrap:wrap;padding-block:10px 0}
+.brand{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:8px}
+.brand b{font-family:var(--display);font-weight:400;font-size:30px;letter-spacing:.5px;line-height:1;color:var(--ink)}
+.brand span{font-size:14px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.tabs{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+.tab{background:none;border:0;border-bottom:3px solid transparent;padding:9px 12px 8px;font-weight:600;font-size:15px;color:var(--muted);cursor:pointer}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--red)}
+
+main.wrap{padding-block:30px 48px}
+.view[hidden]{display:none}
+.view.iris{animation:iris .55s cubic-bezier(.3,.7,.2,1) both}
+@keyframes iris{from{clip-path:circle(0% at 50% 120px)}to{clip-path:circle(150% at 50% 120px)}}
+h1,h2,h3{margin:0;line-height:1.1;text-wrap:balance}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(34px,5.4vw,58px);letter-spacing:.5px}
+h2{font-size:24px;font-weight:700}
+h3{font-size:17px;font-weight:700}
+.lede{color:var(--muted);max-width:66ch;margin:8px 0 0}
+.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* Portada de la vista Estado */
+.hero{position:relative;overflow:hidden;border:2px solid var(--ink);border-radius:14px;background:var(--card);padding:26px 26px 24px}
+.hero::before{content:"";position:absolute;inset:-60%;background:repeating-conic-gradient(from 0deg at 50% 50%,var(--ray) 0deg 7deg,transparent 7deg 14deg);pointer-events:none}
+.hero>*{position:relative}
+.hero-head{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;align-items:flex-end}
+.updated{font-size:13px;color:var(--muted)}
+.counts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:22px}
+.count{border:1.5px solid var(--line);border-radius:10px;background:var(--paper);padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.count .lbl{font-size:13px;font-weight:600;color:var(--muted)}
+.count .num{font-family:var(--mono);font-size:30px;font-weight:500;line-height:1.1;font-variant-numeric:tabular-nums}
+.count .when{font-size:13px;color:var(--muted)}
+.count.key{border-color:var(--red);background:var(--red-tint)}
+.count.key .num{color:var(--red)}
+.count.past .num{color:var(--teal)}
+
+.grid2{display:grid;grid-template-columns:1.35fr 1fr;gap:20px;margin-top:22px}
+@media (max-width:900px){.grid2{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:20px;box-shadow:var(--shadow);min-width:0}
+.panel h2{margin:4px 0 6px}
+.stack{display:flex;flex-direction:column;gap:20px;min-width:0}
+.meter{height:8px;background:var(--paper-2);border-radius:99px;overflow:hidden;margin:14px 0 6px}
+.meter i{display:block;height:100%;background:var(--red);border-radius:99px}
+.meter.done i{background:var(--teal)}
+.meter-txt{font-size:13.5px;color:var(--muted)}
+.gate{margin-top:14px;padding:12px 14px;border:1.5px dashed var(--ink);border-radius:10px;font-size:15px}
+.gate b{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.todo{list-style:none;padding:0;margin:8px 0 0}
+.todo li{border-top:1px solid var(--line)}
+.todo button{width:100%;text-align:left;background:none;border:0;padding:9px 2px;display:flex;gap:10px;align-items:center;cursor:pointer}
+.todo button:hover .t{text-decoration:underline;text-underline-offset:3px}
+.todo .t{flex:1;min-width:0}
+.linkbtn{background:none;border:0;padding:0;color:var(--red);font-weight:600;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.sum{margin-top:20px;color:var(--muted)}
+.sum strong{color:var(--ink)}
+
+/* Estados */
+.st{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.04em;padding:2px 9px;border-radius:99px;border:1.5px solid currentColor;white-space:nowrap;line-height:1.5}
+.st-hecho{color:var(--teal);background:var(--teal-tint)}
+.st-en_curso{color:var(--red);background:var(--red-tint)}
+.st-planificado{color:var(--muted)}
+.st-por_decidir{color:var(--gold);border-style:dashed}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+
+/* Calendario */
+.cal-wrap{overflow-x:auto;border:1.5px solid var(--line);border-radius:12px;background:var(--card);margin-top:20px;box-shadow:var(--shadow)}
+.cal{display:block;min-width:960px;width:100%;height:auto}
+.cal .tick{stroke:var(--line);stroke-width:1}
+.cal .axis{stroke:var(--ink);stroke-width:1.5}
+.cal .mon{fill:var(--muted);font:500 12px var(--body)}
+.cal .yr{fill:var(--ink);font:700 12px var(--body)}
+.cal .lab{fill:var(--ink);font:500 13px var(--body)}
+.cal .lab.sm{font-size:12.5px}
+.cal .sec{fill:var(--muted);font:600 11.5px var(--body);letter-spacing:.12em;text-transform:uppercase}
+.cal .dt{fill:var(--muted);font:400 11.5px var(--mono)}
+.cal .guide{stroke:var(--line);stroke-dasharray:2 4}
+.cal .b-done{fill:var(--teal-tint);stroke:var(--teal);stroke-width:1.5}
+.cal .b-cur{fill:var(--red-tint);stroke:var(--red);stroke-width:2}
+.cal .b-fut{fill:var(--card);stroke:var(--faint);stroke-width:1.5}
+.cal .m-nuestro{fill:var(--red)}
+.cal .m-steam{fill:var(--sky)}
+.cal .m-mercado{fill:var(--gold)}
+.cal .m-uni{fill:var(--faint)}
+.cal .r-nuestro{fill:var(--red-tint);stroke:var(--red)}
+.cal .r-steam{fill:var(--sky-tint);stroke:var(--sky)}
+.cal .r-mercado{fill:var(--gold-tint);stroke:var(--gold)}
+.cal .r-uni{fill:var(--paper-2);stroke:var(--faint);stroke-dasharray:3 3}
+.cal .today{stroke:var(--red);stroke-width:1.5;stroke-dasharray:5 4}
+.cal .today-t{fill:var(--red);font:700 12px var(--body)}
+.cal .hit{cursor:pointer}
+.cal .hit:hover rect{stroke-width:2.5}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font-size:13.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+
+/* Filtros y tablero */
+.toolbar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin:20px 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--line);background:var(--card);border-radius:99px;padding:3px 11px 3px 9px;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;color:var(--muted)}
+.chip:hover{color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.search{border:0;border-bottom:1.5px solid var(--muted);background:transparent;padding:6px 2px;font:inherit;font-size:15px;color:var(--ink);min-width:220px;max-width:100%}
+.search::placeholder{color:var(--faint)}
+.count-note{font-size:13.5px;color:var(--muted);min-height:1em;margin:0 0 8px}
+.board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(290px,1fr);gap:16px;overflow-x:auto;padding:4px 2px 16px;scroll-snap-type:x proximity}
+.col{scroll-snap-align:start;background:var(--paper-2);border:1.5px solid var(--line);border-radius:12px;display:flex;flex-direction:column;min-width:0}
+.col.current{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+.col-head{padding:14px 14px 12px;border-bottom:1.5px solid var(--line)}
+.col-head .code{font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.col.current .col-head .code{color:var(--red)}
+.col-head h2{font-size:21px;margin:4px 0 4px}
+.col-head p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.45}
+.col-head .meter{margin:10px 0 4px;height:6px}
+.col-body{padding:10px;display:flex;flex-direction:column;gap:8px}
+.grp{font-size:12.5px;font-weight:600;color:var(--muted);margin:8px 2px 0;display:flex;align-items:center;gap:7px}
+.grp:first-child{margin-top:2px}
+.empty{font-size:14px;color:var(--muted);padding:8px 2px}
+.card{text-align:left;width:100%;background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:11px 12px 10px;cursor:pointer;display:flex;flex-direction:column;gap:5px;transition:transform .15s ease,border-color .15s ease}
+.card:hover{transform:translateY(-1px);border-color:var(--ink)}
+.card .ct{font-weight:600;font-size:15.5px;line-height:1.3}
+.card .cs{font-size:13.5px;color:var(--muted);line-height:1.45}
+.card .cf{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:2px}
+.card .mini{flex:1;min-width:60px;height:4px;background:var(--paper-2);border-radius:99px;overflow:hidden}
+.card .mini i{display:block;height:100%;background:var(--red)}
+.card .date{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* Áreas */
+.tbl-wrap{overflow-x:auto;margin-top:18px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);box-shadow:var(--shadow)}
+table.areas{border-collapse:collapse;width:100%;min-width:900px;font-size:14px}
+table.areas th,table.areas td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:middle}
+table.areas thead th{font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:.04em;background:var(--paper-2);position:sticky;top:0}
+table.areas thead th.cur{color:var(--red)}
+table.areas td.cur{background:var(--red-tint)}
+table.areas th[scope="row"]{font-weight:600;white-space:nowrap}
+.pips{display:flex;flex-wrap:wrap;gap:3px;align-items:center}
+.pip{width:11px;height:11px;border-radius:3px;border:1.5px solid var(--faint);cursor:pointer;padding:0}
+.pip.hecho{background:var(--teal);border-color:var(--teal)}
+.pip.en_curso{background:var(--red);border-color:var(--red)}
+.pip.por_decidir{border-style:dashed;border-color:var(--gold)}
+
+/* Campaña */
+.camp{max-width:860px;margin-top:20px;display:flex;flex-direction:column;gap:26px}
+.camp-month h2{font-family:var(--display);font-weight:400;font-size:28px;letter-spacing:.5px;border-bottom:2px solid var(--ink);padding-bottom:4px}
+.camp-list{list-style:none;padding:0;margin:8px 0 0}
+.camp-list li{display:grid;grid-template-columns:110px 1fr auto;gap:4px 14px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line)}
+.camp-list .d{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.camp-list .what{min-width:0}
+.camp-list .what button{background:none;border:0;padding:0;text-align:left;cursor:pointer;font-weight:600}
+.camp-list .what button:hover{text-decoration:underline;text-underline-offset:3px}
+.camp-list .what small{display:block;color:var(--muted);font-size:13.5px}
+.tag{font-size:12px;font-weight:600;padding:1px 8px;border-radius:99px;white-space:nowrap}
+.tag.nuestro{color:var(--red);background:var(--red-tint)}
+.tag.steam{color:var(--sky);background:var(--sky-tint)}
+.tag.mercado{color:var(--gold);background:var(--gold-tint)}
+.tag.uni{color:var(--muted);background:var(--paper-2)}
+@media (max-width:560px){.camp-list li{grid-template-columns:1fr auto}.camp-list .d{grid-column:1 / -1}}
+
+/* Novedades */
+.news{max-width:800px;margin-top:20px}
+.entry{display:grid;grid-template-columns:140px 1fr;gap:18px;padding:20px 0;border-top:1.5px solid var(--line)}
+@media (max-width:620px){.entry{grid-template-columns:1fr;gap:4px}}
+.entry time{font-family:var(--mono);font-size:13.5px;color:var(--muted);padding-top:4px}
+.entry h2{font-size:22px;margin-bottom:6px}
+.entry ul{margin:0;padding-left:18px}
+.entry li{margin:4px 0}
+.entry li::marker{color:var(--red)}
+
+/* Estado de carga */
+.notice{border:1.5px dashed var(--line);border-radius:12px;padding:22px;color:var(--muted);background:var(--card);max-width:720px}
+.notice b{color:var(--ink);display:block;font-size:17px;margin-bottom:4px}
+
+/* Ficha */
+.scrim{position:fixed;inset:0;background:rgba(10,10,8,.55);z-index:40}
+.scrim[hidden]{display:none}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(520px,100%);z-index:41;background:var(--card);color:var(--ink);border-left:2px solid var(--ink);overflow-y:auto;
+  padding:calc(env(safe-area-inset-top,0px) + 24px) 26px calc(env(safe-area-inset-bottom,0px) + 28px);transition:transform .28s ease}
+.drawer[hidden]{display:block;transform:translateX(105%);visibility:hidden}
+.drawer .cat{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--muted)}
+.drawer h2{font-size:28px;margin:10px 0 10px}
+.drawer .row{display:flex;gap:10px 14px;align-items:center;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.drawer h3{margin:20px 0 4px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.drawer p{margin:0}
+.drawer .deps{list-style:none;padding:0;margin:0}
+.drawer .deps li{padding:3px 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.drawer .deps button{background:none;border:0;padding:0;cursor:pointer;color:var(--red);text-decoration:underline;text-underline-offset:3px;text-align:left}
+.close{position:absolute;top:calc(env(safe-area-inset-top,0px) + 14px);right:16px;background:var(--paper);border:1.5px solid var(--line);border-radius:99px;padding:4px 12px;cursor:pointer;font-weight:600;font-size:13.5px}
+
+.foot{border-top:1.5px solid var(--line);margin-top:36px;padding-top:16px;font-size:14px;color:var(--muted)}
+@media (max-width:760px){
+  .tabs{margin-left:0;flex-wrap:nowrap;overflow-x:auto;width:100%}
+  .tab{white-space:nowrap;font-size:14px;padding:8px 9px 7px}
+  .brand b{font-size:25px}
+  .hero{padding:20px 16px}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important}}
+</style>
+
+<header class="top">
+  <div class="wrap top-in">
+    <div class="brand"><b>Mobtender</b><span>Hoja de ruta</span></div>
+    <nav class="tabs" role="tablist" aria-label="Secciones">
+      <button class="tab" role="tab" id="tab-estado" data-view="estado">Estado</button>
+      <button class="tab" role="tab" id="tab-calendario" data-view="calendario">Calendario</button>
+      <button class="tab" role="tab" id="tab-hitos" data-view="hitos">Por hitos</button>
+      <button class="tab" role="tab" id="tab-areas" data-view="areas">Por áreas</button>
+      <button class="tab" role="tab" id="tab-campana" data-view="campana">Campaña</button>
+      <button class="tab" role="tab" id="tab-novedades" data-view="novedades">Novedades</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="view" id="view-estado" aria-labelledby="t-estado">
+    <div class="hero">
+      <div class="hero-head">
+        <div>
+          <div class="eyebrow">Los Ángeles, 1933 · un friend slop de la Ley Seca</div>
+          <h1 id="t-estado">¿Dónde estamos?</h1>
+        </div>
+        <div class="updated" id="updated">Cargando…</div>
+      </div>
+      <div class="counts" id="counts"></div>
+    </div>
+    <div id="estado-body"></div>
+  </section>
+
+  <section class="view" id="view-calendario" aria-labelledby="t-cal" hidden>
+    <h1 id="t-cal" style="font-size:clamp(30px,4.4vw,46px)">Calendario</h1>
+    <p class="lede">Cada hito a escala, con las fechas de Steam y las de la campaña. Pulsa un hito para ver lo que hay dentro.</p>
+    <div id="cal-body"></div>
+  </section>
+
+  <section class="view" id="view-hitos" aria-labelledby="t-hitos" hidden>
+    <h1 id="t-hitos" style="font-size:clamp(30px,4.4vw,46px)">Por hitos</h1>
+    <p class="lede">Cada columna es un hito y cada ficha, algo que hay que hacer. Filtra por área o por estado y pulsa una ficha para ver el detalle.</p>
+    <div class="toolbar">
+      <div class="chips" id="f-cat" aria-label="Filtrar por área"></div>
+      <div class="chips" id="f-st" aria-label="Filtrar por estado"></div>
+      <input class="search" id="f-q" type="search" placeholder="Buscar, por ejemplo «cambiazo»" aria-label="Buscar en la hoja de ruta">
+      <button class="linkbtn" id="f-reset">Quitar filtros</button>
+    </div>
+    <p class="count-note" id="f-count"></p>
+    <div class="board" id="board"></div>
+  </section>
+
+  <section class="view" id="view-areas" aria-labelledby="t-areas" hidden>
+    <h1 id="t-areas" style="font-size:clamp(30px,4.4vw,46px)">Por áreas</h1>
+    <p class="lede">Qué se trabaja en cada hito, área por área. Cada cuadrado es una ficha; púlsalo para abrirla.</p>
+    <div class="legend" id="legend-areas"></div>
+    <div class="tbl-wrap" id="areas-body"></div>
+  </section>
+
+  <section class="view" id="view-campana" aria-labelledby="t-camp" hidden>
+    <h1 id="t-camp" style="font-size:clamp(30px,4.4vw,46px)">Campaña</h1>
+    <p class="lede">La publicidad, Steam y las fechas que mandan, mes a mes: de la página de la tienda al lanzamiento.</p>
+    <div class="camp" id="camp-body"></div>
+  </section>
+
+  <section class="view" id="view-novedades" aria-labelledby="t-news" hidden>
+    <h1 id="t-news" style="font-size:clamp(30px,4.4vw,46px)">Novedades</h1>
+    <p class="lede">Lo que ha cambiado en el proyecto, de lo más reciente a lo más antiguo.</p>
+    <div class="news" id="news"></div>
+  </section>
+
+  <p class="foot">Versión pública de la hoja de ruta de Mobtender: enseña cómo avanza el desarrollo. Se actualiza cada vez que se termina algo. Las fechas son objetivos: si un hito no cumple su condición, se recorta alcance antes de mover el lanzamiento.</p>
+</main>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="d-title" hidden></aside>
+
+<script>
+(function(){
+"use strict";
+const CATS = [
+  {id:"dis", n:"Diseño y documentos", c:"#7b68a6"},
+  {id:"sis", n:"Sistemas de juego",   c:"#2f8a74"},
+  {id:"ia",  n:"IA y voz",            c:"#3d72b0"},
+  {id:"red", n:"Red y multijugador",  c:"#6b8f2c"},
+  {id:"acc", n:"Acción y combate",    c:"#c2522f"},
+  {id:"arte",n:"Arte y escenarios",   c:"#b78320"},
+  {id:"son", n:"Sonido, música y radio", c:"#a24f86"},
+  {id:"per", n:"Personajes e historia",  c:"#9b6a45"},
+  {id:"epo", n:"Época",               c:"#7d7c4c"},
+  {id:"tec", n:"Tecnología",          c:"#68717c"},
+  {id:"mkt", n:"Campaña y comunidad", c:"#c13f63"},
+  {id:"neg", n:"Steam y negocio",     c:"#2c8ea0"}
+];
+const CAT = Object.fromEntries(CATS.map(c => [c.id, c]));
+const ST = {hecho:"Hecho", en_curso:"En curso", planificado:"Planificado", por_decidir:"Por decidir"};
+const TIPO = {nuestro:"Nuestro", steam:"Steam", mercado:"Mercado", uni:"Universidad"};
+const MES = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+const MESL = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+const VIEWS = ["estado","calendario","hitos","areas","campana","novedades"];
+
+const S = {mode:"loading", hitos:[], items:[], fechas:[], novedades:[], meta:null,
+  ready:{hitos:false, items:false, fechas:false, novedades:false, meta:false}};
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const isISO = s => typeof s === "string" && /^\d{4}-\d{2}-\d{2}$/.test(s);
+function fmt(iso){ if(!isISO(iso)) return ""; const [y,m,d] = iso.split("-").map(Number); return d + " " + MES[m-1] + " " + y; }
+function fmtRange(a, b){
+  if(!isISO(a)) return "";
+  if(!isISO(b) || a === b) return fmt(a);
+  const [ya,ma,da] = a.split("-").map(Number), [yb,mb,db] = b.split("-").map(Number);
+  if(ya === yb && ma === mb) return da + " al " + db + " " + MES[mb-1] + " " + yb;
+  if(ya === yb) return da + " " + MES[ma-1] + " al " + db + " " + MES[mb-1] + " " + yb;
+  return fmt(a) + " al " + fmt(b);
+}
+function todayUTC(){ const n = new Date(); return Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()); }
+const dayN = iso => Date.parse(iso) / 864e5;
+function daysTo(iso){ return Math.round((Date.parse(iso) - todayUTC()) / 864e5); }
+const todayISO = () => new Date(todayUTC()).toISOString().slice(0,10);
+
+/* ---------- Datos derivados ---------- */
+let D = null;
+function derive(){
+  const hitos = S.hitos.filter(h => h && h.nombre).slice().sort((a,b) => (a.orden ?? 0) - (b.orden ?? 0));
+  const items = S.items.filter(i => i && i.t);
+  const ITEM = Object.fromEntries(items.map(i => [i.id, i]));
+  const HITO = Object.fromEntries(hitos.map(h => [h.id, h]));
+  const info = {};
+  hitos.forEach(h => {
+    const its = items.filter(i => i.hito === h.id);
+    const pct = its.length ? Math.round(its.reduce((a,i) => a + (i.estado === "hecho" ? 100 : (Number(i.p) || 0)), 0) / its.length) : 0;
+    info[h.id] = {its, pct, done: its.length > 0 && its.every(i => i.estado === "hecho")};
+  });
+  let cur = hitos.findIndex(h => !info[h.id].done);
+  if(cur < 0) cur = hitos.length - 1;
+  const fechas = S.fechas.filter(f => f && isISO(f.fecha)).slice().sort((a,b) => a.fecha < b.fecha ? -1 : a.fecha > b.fecha ? 1 : 0);
+  const news = S.novedades.filter(n => n && n.titulo).slice().sort((a,b) => (a.fecha < b.fecha ? 1 : a.fecha > b.fecha ? -1 : 0));
+  D = {hitos, items, ITEM, HITO, info, cur, fechas, news};
+}
+function hState(i){ if(!D) return "future"; return i < D.cur ? "done" : i === D.cur ? "current" : "future"; }
+function itemDate(i){ if(isISO(i.fecha)) return i.fecha; const h = D.HITO[i.hito]; return h && isISO(h.inicio) ? h.inicio : ""; }
+const stPill = s => '<span class="st st-' + esc(s) + '">' + esc(ST[s] || s) + '</span>';
+const catDot = id => { const c = CAT[id]; return c ? '<i class="dot" style="background:' + c.c + '"></i>' : ""; };
+
+/* ---------- Navegación ---------- */
+let currentView = null;
+function show(v, animate){
+  if(!VIEWS.includes(v)) v = "estado";
+  VIEWS.forEach(x => {
+    const el = $("#view-" + x); const on = x === v;
+    el.hidden = !on;
+    if(on && animate && currentView && currentView !== v){ el.classList.remove("iris"); void el.offsetWidth; el.classList.add("iris"); }
+  });
+  document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", t.dataset.view === v ? "true" : "false"));
+  currentView = v;
+  try { sessionStorage.setItem("qn-view", v); } catch(e){}
+}
+document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => { location.hash = t.dataset.view; }));
+function route(){
+  const h = decodeURIComponent(location.hash.slice(1));
+  if(h.startsWith("item-")){ const id = h.slice(5); if(D && D.ITEM[id]){ openItem(id); return; } }
+  closeItem();
+  let fallback = "estado"; try { fallback = sessionStorage.getItem("qn-view") || "estado"; } catch(e){}
+  show(h || fallback, true);
+}
+window.addEventListener("hashchange", route);
+
+/* ---------- Mensajes de carga ---------- */
+function notice(){
+  if(S.mode === "loading") return '<div class="notice"><b>Cargando la hoja de ruta…</b>Los hitos y las fichas llegan del almacén de la página en un momento.</div>';
+  if(S.mode === "nodb") return '<div class="notice"><b>Esta hoja de ruta se ve dentro de claude.ai</b>Sus datos viven en el almacén de la página, que solo se abre desde claude.ai con una cuenta de la organización.</div>';
+  if(S.mode === "error") return '<div class="notice"><b>No se han podido leer los datos</b>Vuelve a abrir la página dentro de un rato.</div>';
+  if(S.mode === "empty") return '<div class="notice"><b>Todavía no hay hitos</b>Claude carga los hitos y las fichas al actualizar la hoja de ruta.</div>';
+  return "";
+}
+
+/* ---------- Estado ---------- */
+function renderCounts(){
+  if(!D){ $("#counts").innerHTML = ""; return; }
+  const keys = D.fechas.filter(f => f.cuenta);
+  $("#counts").innerHTML = keys.map(f => {
+    const n = daysTo(f.fecha), past = n < 0, today = n === 0;
+    const big = past ? "Hecho" : today ? "Hoy" : n.toLocaleString("es-ES");
+    const sub = past ? "fue el " + fmt(f.fecha) : today ? fmt(f.fecha) : (n === 1 ? "día · " : "días · ") + fmt(f.fecha);
+    return '<div class="count' + (f.clave ? " key" : "") + (past ? " past" : "") + '"><span class="lbl">' + esc(f.titulo) + '</span><span class="num">' + esc(big) + '</span><span class="when">' + esc(sub) + '</span></div>';
+  }).join("");
+}
+function todoList(its){
+  return '<ul class="todo">' + its.map(i => '<li><button data-item="' + esc(i.id) + '">' + stPill(i.estado) + '<span class="t">' + esc(i.t) + '</span></button></li>').join("") + '</ul>';
+}
+function renderEstado(){
+  const upd = S.meta && isISO(S.meta.actualizado) ? "Actualizado el " + fmt(S.meta.actualizado) : (S.mode === "ok" ? "" : "");
+  $("#updated").textContent = S.mode === "ok" ? upd : (S.mode === "loading" ? "Cargando…" : "");
+  renderCounts();
+  if(S.mode !== "ok"){ $("#estado-body").innerHTML = '<div style="margin-top:22px">' + notice() + '</div>'; return; }
+  const h = D.hitos[D.cur], inf = D.info[h.id];
+  const pending = inf.its.filter(i => i.estado !== "hecho"), done = inf.its.filter(i => i.estado === "hecho");
+  const late = isISO(h.fin) && daysTo(h.fin) < 0 && !inf.done;
+  const nx = D.hitos[D.cur + 1];
+  const n0 = D.news[0];
+  const tot = D.items.length, c = s => D.items.filter(i => i.estado === s).length;
+  $("#estado-body").innerHTML =
+    '<div class="grid2">' +
+      '<div class="panel">' +
+        '<div class="eyebrow">Hito ' + esc(h.orden) + ' · ' + esc(fmtRange(h.inicio, h.fin)) + (late ? ' · con retraso' : '') + '</div>' +
+        '<h2>' + esc(h.nombre) + '</h2><p style="margin:0">' + esc(h.meta) + '</p>' +
+        '<div class="meter' + (inf.done ? " done" : "") + '" role="progressbar" aria-valuenow="' + inf.pct + '" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso del hito"><i style="width:' + inf.pct + '%"></i></div>' +
+        '<div class="meter-txt">' + inf.pct + ' % del hito · ' + done.length + ' de ' + inf.its.length + ' fichas terminadas</div>' +
+        '<div class="gate"><b>Para pasar al siguiente hito</b>' + esc(h.puerta) + '</div>' +
+        (pending.length ? '<h3 style="margin-top:18px">Lo que falta</h3>' + todoList(pending) : "") +
+        (done.length ? '<h3 style="margin-top:18px">Ya terminado</h3>' + todoList(done) : "") +
+      '</div>' +
+      '<div class="stack">' +
+        (nx ? '<div class="panel"><div class="eyebrow">Siguiente · ' + esc(fmtRange(nx.inicio, nx.fin)) + '</div><h2>Hito ' + esc(nx.orden) + ' · ' + esc(nx.nombre) + '</h2><p style="margin:0">' + esc(nx.meta) + '</p>' + todoList(D.info[nx.id].its.slice(0,5)) + '<p style="margin:12px 0 0"><button class="linkbtn" data-goto="' + esc(nx.id) + '">Ver todo el hito ' + esc(nx.orden) + '</button></p></div>' : '<div class="panel"><h2>Último hito</h2><p>No quedan hitos por delante.</p></div>') +
+        (n0 ? '<div class="panel"><div class="eyebrow">Último cambio · ' + esc(fmt(n0.fecha)) + '</div><h2>' + esc(n0.titulo) + '</h2><p style="margin:6px 0 0">' + esc((n0.puntos || [])[0] || "") + '</p><p style="margin:12px 0 0"><button class="linkbtn" data-view-go="novedades">Ver todas las novedades</button></p></div>' : "") +
+      '</div>' +
+    '</div>' +
+    '<p class="sum">En total hay <strong>' + tot + '</strong> fichas: ' + c("hecho") + ' hechas, ' + c("en_curso") + ' en curso, ' + c("planificado") + ' planificadas y ' + c("por_decidir") + ' por decidir.</p>';
+}
+
+/* ---------- Calendario ---------- */
+function renderCal(){
+  if(S.mode !== "ok"){ $("#cal-body").innerHTML = notice(); return; }
+  const hs = D.hitos.filter(h => isISO(h.inicio) && isISO(h.fin));
+  const fs = D.fechas;
+  if(!hs.length){ $("#cal-body").innerHTML = notice(); return; }
+  const allD = [].concat(hs.map(h => h.inicio), hs.map(h => h.fin), fs.map(f => f.fecha), fs.map(f => f.fin).filter(isISO));
+  const lo = Math.min(...allD.map(dayN)) - 10, hi = Math.max(...allD.map(dayN)) + 10;
+  const L = 250, R = 1180, W = 1200, rowH = 28;
+  const X = iso => L + (dayN(iso) - lo) / (hi - lo) * (R - L);
+  const Xd = d => L + (d - lo) / (hi - lo) * (R - L);
+  let y = 64; const rows = [];
+  rows.push({sec:"Hitos", y}); y += 24;
+  hs.forEach((h, i) => { rows.push({h, idx: D.hitos.indexOf(h), y}); y += rowH; });
+  y += 10; rows.push({sec:"Fechas clave", y}); y += 24;
+  fs.forEach(f => { rows.push({f, y}); y += rowH; });
+  const H = y + 16;
+  let svg = '<svg class="cal" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Calendario de hitos y fechas clave">';
+  // meses
+  const first = new Date(lo * 864e5); let yy = first.getUTCFullYear(), mm = first.getUTCMonth() + 1;
+  if(mm > 11){ mm = 0; yy++; }
+  for(let k = 0; k < 40; k++){
+    const d = Date.UTC(yy, mm, 1) / 864e5; if(d > hi) break;
+    const x = Xd(d);
+    svg += '<line class="tick" x1="' + x + '" x2="' + x + '" y1="44" y2="' + (H - 10) + '"/>';
+    if(mm === 0 || k === 0) svg += '<text class="yr" x="' + (x + 4) + '" y="18">' + yy + '</text>';
+    svg += '<text class="mon" x="' + (x + 4) + '" y="36">' + MES[mm] + '</text>';
+    mm++; if(mm > 11){ mm = 0; yy++; }
+  }
+  svg += '<line class="axis" x1="' + L + '" x2="' + R + '" y1="44" y2="44"/>';
+  const t = todayUTC() / 864e5;
+  rows.forEach(r => {
+    if(r.sec){ svg += '<text class="sec" x="20" y="' + (r.y + 12) + '">' + esc(r.sec) + '</text>'; return; }
+    const cy = r.y + rowH / 2, gx = r.h ? X(r.h.inicio) : X(r.f.fecha) - 8;
+    if(gx > L + 2) svg += '<line class="guide" x1="' + L + '" x2="' + gx + '" y1="' + cy + '" y2="' + cy + '"/>';
+    if(r.h){
+      const st = hState(r.idx), cls = st === "done" ? "b-done" : st === "current" ? "b-cur" : "b-fut";
+      const x1 = X(r.h.inicio), x2 = Math.max(X(r.h.fin), x1 + 6);
+      svg += '<g class="hit" data-goto="' + esc(r.h.id) + '" tabindex="0" role="button" aria-label="Hito ' + esc(r.h.orden) + ': ' + esc(r.h.nombre) + '">';
+      svg += '<rect class="' + cls + '" x="' + x1 + '" y="' + (cy - 8) + '" width="' + (x2 - x1) + '" height="16" rx="8"/>';
+      svg += '<text class="lab" x="20" y="' + (cy + 4.5) + '">' + esc(r.h.orden) + ' · ' + esc(r.h.corto || r.h.nombre) + '</text>';
+      const lab = fmtRange(r.h.inicio, r.h.fin), right = x2 + 10 + lab.length * 6.6 < W - 6;
+      svg += '<text class="dt" x="' + (right ? x2 + 10 : x1 - 10) + '" y="' + (cy + 4) + '" text-anchor="' + (right ? "start" : "end") + '">' + esc(lab) + '</text></g>';
+    } else {
+      const f = r.f, tipo = TIPO[f.tipo] ? f.tipo : "nuestro";
+      svg += '<text class="lab sm" x="20" y="' + (cy + 4.5) + '">' + esc(f.titulo.length > 33 ? f.titulo.slice(0, 32) + "…" : f.titulo) + '<title>' + esc(f.titulo) + (f.nota ? ". " + esc(f.nota) : "") + '</title></text>';
+      let x2;
+      if(isISO(f.fin) && f.fin !== f.fecha){
+        const x1 = X(f.fecha); x2 = Math.max(X(f.fin), x1 + 5);
+        svg += '<rect class="r-' + tipo + '" x="' + x1 + '" y="' + (cy - 6) + '" width="' + (x2 - x1) + '" height="12" rx="3"/>';
+      } else {
+        const x = X(f.fecha); x2 = x + 7;
+        svg += '<path class="m-' + tipo + '" d="M' + x + ' ' + (cy - 7) + 'l7 7l-7 7l-7 -7z"/>';
+      }
+      const lab = fmtRange(f.fecha, f.fin), x0 = X(f.fecha), right = x2 + 10 + lab.length * 6.6 < W - 6;
+      svg += '<text class="dt" x="' + (right ? x2 + 10 : x0 - 12) + '" y="' + (cy + 4) + '" text-anchor="' + (right ? "start" : "end") + '">' + esc(lab) + '</text>';
+    }
+  });
+  if(t >= lo && t <= hi){
+    const x = Xd(t);
+    svg += '<line class="today" x1="' + x + '" x2="' + x + '" y1="48" y2="' + (H - 10) + '"/>';
+    svg += '<text class="today-t" x="' + (x + 5) + '" y="58">Hoy</text>';
+  }
+  svg += '</svg>';
+  $("#cal-body").innerHTML = '<div class="legend">' +
+    '<span><i class="sw" style="background:var(--teal)"></i>Hito terminado</span>' +
+    '<span><i class="sw" style="background:var(--red)"></i>Hito en curso y fechas nuestras</span>' +
+    '<span><i class="sw" style="border:1.5px solid var(--faint)"></i>Hito por venir</span>' +
+    '<span><i class="sw" style="background:var(--sky)"></i>Steam</span>' +
+    '<span><i class="sw" style="background:var(--gold)"></i>Mercado</span>' +
+    '<span><i class="sw" style="background:var(--faint)"></i>Universidad</span></div>' +
+    '<div class="cal-wrap">' + svg + '</div>';
+}
+
+/* ---------- Por hitos ---------- */
+const F = {cats:new Set(), sts:new Set(), q:""};
+function buildFilters(){
+  $("#f-cat").innerHTML = CATS.map(c => '<button class="chip" aria-pressed="false" data-cat="' + c.id + '"><i class="dot" style="background:' + c.c + '"></i>' + esc(c.n) + '</button>').join("");
+  $("#f-st").innerHTML = Object.entries(ST).map(([k,v]) => '<button class="chip" aria-pressed="false" data-st="' + k + '">' + esc(v) + '</button>').join("");
+  document.querySelectorAll("#f-cat .chip").forEach(b => b.addEventListener("click", () => { toggle(F.cats, b.dataset.cat, b); renderBoard(); }));
+  document.querySelectorAll("#f-st .chip").forEach(b => b.addEventListener("click", () => { toggle(F.sts, b.dataset.st, b); renderBoard(); }));
+  $("#f-q").addEventListener("input", e => { F.q = e.target.value.trim().toLowerCase(); renderBoard(); });
+  $("#f-reset").addEventListener("click", () => { F.cats.clear(); F.sts.clear(); F.q = ""; $("#f-q").value = ""; document.querySelectorAll(".toolbar .chip").forEach(b => b.setAttribute("aria-pressed","false")); renderBoard(); });
+}
+function toggle(set, k, b){ set.has(k) ? set.delete(k) : set.add(k); b.setAttribute("aria-pressed", set.has(k) ? "true" : "false"); }
+const pass = i => (!F.cats.size || F.cats.has(i.cat)) && (!F.sts.size || F.sts.has(i.estado)) && (!F.q || ((i.t||"") + " " + (i.r||"") + " " + (i.d||"")).toLowerCase().includes(F.q));
+function card(i){
+  const dt = isISO(i.fecha) ? '<span class="date">' + esc(fmtRange(i.fecha, i.fin)) + '</span>' : "";
+  return '<button class="card" data-item="' + esc(i.id) + '" aria-label="' + esc(i.t) + ', ' + esc(ST[i.estado] || "") + '">' +
+    '<span class="ct">' + esc(i.t) + '</span><span class="cs">' + esc(i.r) + '</span>' +
+    '<span class="cf">' + stPill(i.estado) + (i.estado === "en_curso" ? '<span class="mini"><i style="width:' + (Number(i.p)||0) + '%"></i></span><span class="date">' + (Number(i.p)||0) + ' %</span>' : "") + dt + '</span></button>';
+}
+function renderBoard(){
+  if(S.mode !== "ok"){ $("#board").innerHTML = notice(); $("#f-count").textContent = ""; return; }
+  const vis = D.items.filter(pass);
+  $("#f-count").textContent = (F.cats.size || F.sts.size || F.q) ? "Mostrando " + vis.length + " de " + D.items.length + " fichas." : "";
+  $("#board").innerHTML = D.hitos.map((h, idx) => {
+    const its = vis.filter(i => i.hito === h.id), inf = D.info[h.id];
+    const groups = CATS.map(c => ({c, its: its.filter(i => i.cat === c.id)})).filter(g => g.its.length);
+    return '<section class="col ' + (idx === D.cur ? "current" : "") + '" id="col-' + esc(h.id) + '" aria-label="Hito ' + esc(h.orden) + '">' +
+      '<div class="col-head"><div class="code">Hito ' + esc(h.orden) + (idx === D.cur ? " · aquí estamos" : "") + '</div><h2>' + esc(h.nombre) + '</h2>' +
+      '<p class="mono" style="font-size:12.5px;margin-bottom:4px">' + esc(fmtRange(h.inicio, h.fin)) + '</p><p>' + esc(h.meta) + '</p>' +
+      '<div class="meter' + (inf.done ? " done" : "") + '"><i style="width:' + inf.pct + '%"></i></div><p>' + inf.pct + ' % · ' + inf.its.length + ' fichas</p></div>' +
+      '<div class="col-body">' + (groups.length ? groups.map(g => '<div class="grp">' + catDot(g.c.id) + esc(g.c.n) + '</div>' + g.its.map(card).join("")).join("") : '<p class="empty">Nada coincide con los filtros en este hito.</p>') + '</div></section>';
+  }).join("");
+}
+function goHito(id){
+  location.hash = "hitos";
+  setTimeout(() => { const col = document.getElementById("col-" + id); if(col) col.scrollIntoView({behavior:"smooth", inline:"start", block:"nearest"}); }, 60);
+}
+
+/* ---------- Por áreas ---------- */
+function renderAreas(){
+  $("#legend-areas").innerHTML = Object.keys(ST).map(s => '<span>' + stPill(s) + '</span>').join("");
+  if(S.mode !== "ok"){ $("#areas-body").innerHTML = '<div style="padding:16px">' + notice() + '</div>'; return; }
+  let html = '<table class="areas"><thead><tr><th scope="col">Área</th>' + D.hitos.map((h, i) => '<th scope="col" class="' + (i === D.cur ? "cur" : "") + '">' + esc(h.orden) + ' · ' + esc(h.corto || h.nombre) + '</th>').join("") + '</tr></thead><tbody>';
+  CATS.forEach(c => {
+    const any = D.items.some(i => i.cat === c.id); if(!any) return;
+    html += '<tr><th scope="row"><span style="display:inline-flex;align-items:center;gap:8px">' + catDot(c.id) + esc(c.n) + '</span></th>';
+    D.hitos.forEach((h, idx) => {
+      const its = D.items.filter(i => i.cat === c.id && i.hito === h.id);
+      html += '<td class="' + (idx === D.cur ? "cur" : "") + '"><div class="pips">' + its.map(i => '<button class="pip ' + esc(i.estado) + '" data-item="' + esc(i.id) + '" title="' + esc(i.t) + ' · ' + esc(ST[i.estado] || "") + '" aria-label="' + esc(i.t) + '"></button>').join("") + '</div></td>';
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  $("#areas-body").innerHTML = html;
+}
+
+/* ---------- Campaña ---------- */
+function renderCamp(){
+  if(S.mode !== "ok"){ $("#camp-body").innerHTML = notice(); return; }
+  const rows = [];
+  D.fechas.forEach(f => rows.push({fecha: f.fecha, fin: f.fin, titulo: f.titulo, nota: f.nota, tipo: TIPO[f.tipo] ? f.tipo : "nuestro"}));
+  D.items.filter(i => (i.cat === "mkt" || i.cat === "neg") && !D.fechas.some(f => f.item === i.id)).forEach(i => {
+    const d = itemDate(i); if(!d) return;
+    rows.push({fecha: d, fin: i.fin, titulo: i.t, nota: i.r, item: i.id, estado: i.estado});
+  });
+  rows.sort((a,b) => a.fecha < b.fecha ? -1 : a.fecha > b.fecha ? 1 : 0);
+  const byMonth = new Map();
+  rows.forEach(r => { const k = r.fecha.slice(0,7); if(!byMonth.has(k)) byMonth.set(k, []); byMonth.get(k).push(r); });
+  let html = "";
+  byMonth.forEach((list, k) => {
+    const [y,m] = k.split("-").map(Number);
+    html += '<section class="camp-month"><h2>' + MESL[m-1] + ' de ' + y + '</h2><ul class="camp-list">' + list.map(r =>
+      '<li><span class="d">' + esc(fmtRange(r.fecha, r.fin)) + '</span><span class="what">' +
+      (r.item ? '<button data-item="' + esc(r.item) + '">' + esc(r.titulo) + '</button>' : '<b>' + esc(r.titulo) + '</b>') +
+      (r.nota ? '<small>' + esc(r.nota) + '</small>' : "") + '</span>' +
+      (r.item ? stPill(r.estado) : '<span class="tag ' + r.tipo + '">' + esc(TIPO[r.tipo]) + '</span>') + '</li>').join("") + '</ul></section>';
+  });
+  $("#camp-body").innerHTML = html || notice();
+}
+
+/* ---------- Novedades ---------- */
+function renderNews(){
+  if(S.mode !== "ok"){ $("#news").innerHTML = notice(); return; }
+  $("#news").innerHTML = D.news.length ? D.news.map(n => '<article class="entry"><time datetime="' + esc(n.fecha) + '">' + esc(fmt(n.fecha)) + '</time><div><h2>' + esc(n.titulo) + '</h2><ul>' + (n.puntos || []).map(p => '<li>' + esc(p) + '</li>').join("") + '</ul></div></article>').join("") : '<div class="notice"><b>Sin novedades todavía</b></div>';
+}
+
+/* ---------- Ficha ---------- */
+let lastFocus = null, prevView = "hitos";
+function openItem(id){
+  const i = D && D.ITEM[id]; if(!i) return;
+  const c = CAT[i.cat] || {n:"", c:"var(--faint)"}, h = D.HITO[i.hito];
+  if(currentView) prevView = currentView; else show(prevView);
+  const deps = (Array.isArray(i.dep) ? i.dep : []).filter(d => D.ITEM[d]);
+  const needed = D.items.filter(x => Array.isArray(x.dep) && x.dep.includes(i.id));
+  lastFocus = document.activeElement;
+  const p = i.estado === "hecho" ? 100 : (Number(i.p) || 0);
+  const when = isISO(i.fecha) ? fmtRange(i.fecha, i.fin) : (h ? fmtRange(h.inicio, h.fin) : "");
+  const d = $("#drawer");
+  d.innerHTML = '<button class="close" id="d-close">Cerrar</button>' +
+    '<span class="cat">' + catDot(i.cat) + esc(c.n) + '</span>' +
+    '<h2 id="d-title">' + esc(i.t) + '</h2>' +
+    '<div class="row">' + stPill(i.estado) + (h ? '<span>Hito ' + esc(h.orden) + ' · ' + esc(h.nombre) + '</span>' : "") + (when ? '<span class="mono">' + esc(when) + '</span>' : "") + '</div>' +
+    (i.estado !== "por_decidir" ? '<div class="meter' + (p === 100 ? " done" : "") + '" role="progressbar" aria-valuenow="' + p + '" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso"><i style="width:' + p + '%"></i></div><div class="meter-txt">' + p + ' % hecho</div>' : "") +
+    '<h3>Qué es</h3><p>' + esc(i.d || i.r) + '</p>' +
+    (i.k ? '<h3>Cuándo está terminado</h3><p>' + esc(i.k) + '</p>' : "") +
+    (deps.length ? '<h3>Necesita antes</h3><ul class="deps">' + deps.map(x => '<li><button data-item="' + esc(x) + '">' + esc(D.ITEM[x].t) + '</button>' + stPill(D.ITEM[x].estado) + '</li>').join("") + '</ul>' : "") +
+    (needed.length ? '<h3>Desbloquea</h3><ul class="deps">' + needed.map(x => '<li><button data-item="' + esc(x.id) + '">' + esc(x.t) + '</button></li>').join("") + '</ul>' : "") +
+    (i.gdd ? '<h3>Dónde está en el GDD</h3><p>' + esc(i.gdd) + '</p>' : "");
+  d.hidden = false; $("#scrim").hidden = false;
+  $("#d-close").addEventListener("click", () => { location.hash = prevView; });
+  $("#d-close").focus();
+}
+function closeItem(){
+  const d = $("#drawer"); if(d.hidden) return;
+  d.hidden = true; $("#scrim").hidden = true;
+  if(lastFocus && document.contains(lastFocus)) lastFocus.focus();
+}
+$("#scrim").addEventListener("click", () => { location.hash = prevView; });
+document.addEventListener("keydown", e => {
+  const d = $("#drawer");
+  if(e.key === "Escape" && !d.hidden){ location.hash = prevView; }
+  if(e.key === "Tab" && !d.hidden){
+    const f = [...d.querySelectorAll("button")]; if(!f.length) return;
+    const first = f[0], last = f[f.length-1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+  if((e.key === "Enter" || e.key === " ") && e.target && e.target.matches && e.target.matches("g.hit")){ e.preventDefault(); goHito(e.target.dataset.goto); }
+});
+// Delegación de clics para fichas, hitos y vistas
+document.addEventListener("click", e => {
+  const it = e.target.closest("[data-item]"); if(it){ location.hash = "item-" + it.dataset.item; return; }
+  const g = e.target.closest("[data-goto]"); if(g){ goHito(g.dataset.goto); return; }
+  const v = e.target.closest("[data-view-go]"); if(v){ location.hash = v.dataset.viewGo; }
+});
+
+/* ---------- Pintar ---------- */
+let pending = false;
+function renderAll(){
+  pending = false;
+  const allReady = Object.values(S.ready).every(Boolean);
+  if(S.mode === "loading" && allReady) S.mode = S.hitos.length ? "ok" : "empty";
+  else if(S.mode === "ok" || S.mode === "empty") S.mode = S.hitos.length ? "ok" : "empty";
+  if(S.mode === "ok") derive(); else D = null;
+  renderEstado(); renderCal(); renderBoard(); renderAreas(); renderCamp(); renderNews();
+  const h = decodeURIComponent(location.hash.slice(1));
+  if(h.startsWith("item-") && D && D.ITEM[h.slice(5)] && $("#drawer").hidden) openItem(h.slice(5));
+}
+function schedule(){ if(pending) return; pending = true; requestAnimationFrame(renderAll); }
+
+async function boot(){
+  // Versión del proyecto: los datos están en el bloque const ROADMAP del principio de este archivo.
+  const R = window.ROADMAP;
+  if(R){
+    ["hitos","items","fechas","novedades"].forEach(n => {
+      S[n] = Object.entries(R[n] || {}).map(([id, d]) => Object.assign({id: id}, d));
+      S.ready[n] = true;
+    });
+    S.meta = R.meta || null; S.ready.meta = true;
+    schedule(); return;
+  }
+  let db = null;
+  try { db = window.claude && typeof window.claude.use === "function" ? await window.claude.use("db") : null; } catch(e){ db = null; }
+  if(!db){ S.mode = "nodb"; schedule(); return; }
+  const fail = err => { if(S.mode === "loading" || S.mode === "ok"){ if(!(err && err.code === "unavailable")) { S.mode = "error"; schedule(); } } };
+  const sub = (name) => db.collection(name).onSnapshot(snap => {
+    S[name] = snap.docs.filter(d => d.exists).map(d => Object.assign({id: d.id}, d.data()));
+    S.ready[name] = true; schedule();
+  }, fail);
+  ["hitos","items","fechas","novedades"].forEach(sub);
+  db.doc("meta/estado").onSnapshot(s => { S.meta = s.exists ? s.data() : null; S.ready.meta = true; schedule(); }, fail);
+}
+
+buildFilters();
+let start = "estado"; try { start = sessionStorage.getItem("qn-view") || "estado"; } catch(e){}
+show(decodeURIComponent(location.hash.slice(1)) && VIEWS.includes(decodeURIComponent(location.hash.slice(1))) ? decodeURIComponent(location.hash.slice(1)) : start, false);
+renderAll();
+boot();
+})();
+</script>
+
+</body>
+</html>
